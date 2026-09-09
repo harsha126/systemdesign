@@ -1,0 +1,198 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --background: oklch(0.975 0.008 238);
+  --foreground: oklch(0.2 0.035 252);
+  --card: oklch(0.995 0.004 238);
+  --card-foreground: oklch(0.2 0.035 252);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.59 0.16 226);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.022 235);
+  --input: oklch(0.88 0.022 235);
+  --ring: oklch(0.59 0.16 226);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.945 0.018 235);
+  --sidebar-foreground: oklch(0.2 0.035 252);
+  --sidebar-primary: oklch(0.59 0.16 226);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.15 0.03 252);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.2 0.035 252);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.72 0.14 220);
+  --primary-foreground: oklch(0.16 0.03 252);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.17 0.032 252);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+.blueprint-bg {
+  background-image: linear-gradient(to right, color-mix(in oklab, var(--border) 42%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklab, var(--border) 42%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.nav-item { @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-muted-foreground transition hover:bg-card hover:text-foreground; }
+.nav-active { @apply bg-card font-medium text-foreground shadow-sm; }
+
+@layer components {
+  .kicker { @apply font-mono text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-primary; }
+  .hero-panel { @apply relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-sm sm:p-9; }
+  .review-panel { @apply flex flex-col justify-between rounded-2xl border border-slate-700 bg-[#0c1726] p-7 text-white shadow-sm; }
+  .section-heading { @apply flex flex-wrap items-end justify-between gap-3; }
+  .section-heading h2 { @apply mt-2 text-2xl font-semibold tracking-tight; }
+  .text-link { @apply items-center gap-1.5 text-sm font-medium text-primary underline-offset-4 hover:underline; }
+  .text-link svg { @apply size-3.5; }
+  .track-card { @apply rounded-xl border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md; }
+  .roadmap-row { @apply flex items-start gap-4 rounded-xl border border-border bg-card p-5 shadow-sm sm:items-center sm:p-6; }
+  .roadmap-number { @apply grid size-11 shrink-0 place-items-center rounded-xl border font-mono text-sm; }
+  .lesson-chip { @apply inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted-foreground hover:border-primary/50 hover:text-foreground; }
+  .lesson-chip svg { @apply size-3; }
+  .lesson-chip-done { @apply border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300; }
+  .lesson-layout { @apply grid gap-8 xl:grid-cols-[minmax(0,1fr)_250px]; }
+  .lesson-aside { @apply hidden xl:block; }
+  .lesson-section { @apply mt-12 border-t border-border pt-9; }
+  .lesson-section h2 { @apply mt-3 text-2xl font-semibold tracking-tight; }
+  .lesson-section > p:not(.kicker) { @apply mt-4 leading-7 text-muted-foreground; }
+  .model-flow { @apply my-5 flex flex-wrap items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-5 font-mono text-sm; }
+  .model-flow svg { @apply size-4 text-primary; }
+  .model-flow strong { @apply rounded-md bg-primary px-3 py-2 text-primary-foreground; }
+  .callout { @apply mt-5 border-l-2 border-primary bg-card p-5 text-base leading-7 shadow-sm; }
+  .decision-card { @apply rounded-xl border border-border bg-card p-4; }
+  .decision-card span { @apply font-mono text-xs text-primary; }
+  .decision-card p { @apply mt-5 text-sm leading-6; }
+  .quiz-card { @apply rounded-2xl border border-border bg-card p-6 sm:p-8; }
+  .quiz-option { @apply flex w-full items-center gap-3 rounded-lg border border-border bg-background p-3 text-left text-sm transition hover:border-primary/40; }
+  .quiz-option > span { @apply grid size-7 shrink-0 place-items-center rounded-md bg-secondary font-mono text-xs; }
+  .quiz-selected { @apply border-primary bg-primary/5; }
+  .quiz-correct { @apply border-emerald-500 bg-emerald-500/10; }
+  .toolbar { @apply flex flex-col gap-3 rounded-xl border border-border bg-card p-3 sm:flex-row sm:items-center sm:justify-between; }
+  .input-icon { @apply absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground; }
+  .select-control { @apply h-9 rounded-md border border-input bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring; }
+  .problem-card, .resource-card { @apply flex flex-col justify-between rounded-xl border border-border bg-card p-5 shadow-sm transition hover:border-primary/50 hover:shadow-md; }
+  .icon-button { @apply grid size-8 place-items-center rounded-md text-muted-foreground transition hover:bg-secondary hover:text-foreground; }
+  .icon-button svg { @apply size-4; }
+  .worksheet-card { @apply rounded-xl border border-border bg-card p-5 sm:p-6; }
+  .step-number { @apply grid size-8 shrink-0 place-items-center rounded-lg bg-primary font-mono text-xs font-semibold text-primary-foreground; }
+  .code-block { @apply mt-5 overflow-x-auto rounded-xl border border-slate-700 bg-[#0c1726] p-5 font-mono text-sm leading-7 text-cyan-100; }
+  .flashcard { @apply flex min-h-80 w-full flex-col items-center justify-center rounded-2xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-primary/50; }
+  .empty-state { @apply flex min-h-[55vh] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card/70 p-8; }
+  .video-shell { @apply mt-5 aspect-video overflow-hidden rounded-xl border border-border bg-[#08111f]; }
+  .video-shell iframe { @apply h-full w-full; }
+  .video-shell button { @apply flex h-full w-full flex-col items-center justify-center gap-3 text-sm text-cyan-200 transition hover:bg-white/5; }
+  .tool-card { @apply rounded-xl border border-border bg-card p-6 shadow-sm; }
+  .tool-card h2 { @apply text-xl font-semibold; }
+  .blueprint-dark { @apply border-slate-700 bg-[#0c1726] text-white; background-image: linear-gradient(to right, rgb(255 255 255 / .04) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / .04) 1px, transparent 1px); background-size: 24px 24px; }
+  .field-row { @apply mt-5 grid grid-cols-[1fr_130px] items-center gap-4 text-sm; }
+  .prose-grid { @apply mt-6 grid gap-6 leading-7 text-muted-foreground md:grid-cols-2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
