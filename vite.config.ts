@@ -45,6 +45,8 @@ export default defineConfig(async () => {
   const { cloudflare } = await import('@cloudflare/vite-plugin');
 
   return {
+    // Sub-path for the GitHub Pages build, e.g. NEXT_PUBLIC_SITE_BASE=/systemdesign
+    base: `${process.env.NEXT_PUBLIC_SITE_BASE ?? ''}/`,
     css: { postcss: { plugins: [tailwindcss()] } },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
