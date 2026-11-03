@@ -28,13 +28,16 @@ import {
 
 type View = 'dashboard' | 'roadmap' | 'practice' | 'review' | 'resources' | 'tools' | 'sources' | 'lesson' | 'problem';
 
-function HardLink({ children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  return <a {...props} data-hard-nav="true">{children}</a>;
+const BASE_PATH = process.env.NEXT_PUBLIC_SITE_BASE ?? '';
+
+function HardLink({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+  return <a {...props} href={href.startsWith('/') ? `${BASE_PATH}${href}` : href} data-hard-nav="true">{children}</a>;
 }
 
 function getRoute(): { view: View; slug?: string } {
   if (typeof window === 'undefined') return { view: 'dashboard' };
-  const parts = window.location.pathname.split('/').filter(Boolean);
+  const path = window.location.pathname;
+  const parts = (BASE_PATH && path.startsWith(BASE_PATH) ? path.slice(BASE_PATH.length) : path).split('/').filter(Boolean);
   if (parts[0] === 'lesson') return { view: 'lesson', slug: parts[1] };
   if (parts[0] === 'practice' && parts[1]) return { view: 'problem', slug: parts[1] };
   const known = ['roadmap', 'practice', 'review', 'resources', 'tools', 'sources'];
